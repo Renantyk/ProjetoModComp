@@ -1,4 +1,3 @@
-import sys
 
 DIGITOS = set("0123456789")
 
@@ -45,14 +44,14 @@ def reconhecer(cadeia, mostrar_passos=False):
         chave = (estado, simbolo)
         if chave not in transicoes:
             if mostrar_passos:
-                print(f"Não existe transição " f"para ({estado}, '{simbolo}')")
+                print(f"Não existe transição para ({estado}, '{simbolo}')")
             return False, passos
 
         proximo_estado = transicoes[chave]
         passos += 1
 
         if mostrar_passos:
-            print(f"Passo {passos}: "f"{estado} -- {simbolo} --> {proximo_estado}")
+            print(f"Passo {passos}: {estado} -- {simbolo} --> {proximo_estado}")
 
         estado = proximo_estado
 
@@ -66,12 +65,8 @@ def reconhecer(cadeia, mostrar_passos=False):
 
 if __name__ == "__main__":
 
-    if len(sys.argv) != 2:
-        print('Uso:')
-        print('python regular.py "123.456.789-00"')
-        sys.exit(1)
-
-    cadeia = sys.argv[1]
+    cadeia = input("Digite um cpf: ")
+    
     aceitou, passos = reconhecer(cadeia, mostrar_passos=True)
 
     print("\n" + "=" * 40)

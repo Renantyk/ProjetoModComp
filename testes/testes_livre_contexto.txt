@@ -1,0 +1,6 @@
+((x+y)*z)
+(teste)
+(t(e(s(t(e)))))
+((a+b)
+(teste()
+tst())
